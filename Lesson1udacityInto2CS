@@ -1,144 +1,88 @@
-first with M
-
-# Use this to try out anything you like. Use print to display your answer
-
-# when you press the "Test Run" button.
-
-# Use the "Reset" button to reset the screen
+#  first with M
+#initialize variable page
 
 page = '''<div id="top_bin"> <div id="top_content" class="width960">
 
    <div class="udacity float-left"> yes <a href="www.yahoo.com">test'''
 
+# goal  = print out the www....com string into a variable 
  
-
-#find and print the start character where the <a href string starts
+#locate and print the start character where the <a href string starts
 
 print page.find ('<a href=')
-
- 
 
 #then store that position in a variable
 
 hreftext_startposition = page.find ('<a href=')
 
- 
-
-# now add 9 to that to get the start of the link
+# now add 9 to that to get the start of the link becasue 9 =  the length of the string <a href=' . Obviously there is an asssumption that all are psace the same
 
 start_link = hreftext_startposition+9
 
- 
-
 # the final letter in the string "www....com" is the letter m
-
- 
+# so store that in a variable next
 
 end_string = "m"
 
- 
-
-# so search for m starting at the start of the link
+# now search for m starting at the start of the link
 
 end_link = page.find(end_string,start_link)
 
 print end_link
 
- 
-
 print page[start_link:end_link+1]
+# og course the above only works where the www.yahoo.com has no "m" until the "m" in .com
 
- 
-
-2) then with >
-
-# Use this to try out anything you like. Use print to display your answer
-
-# when you press the "Test Run" button.
-
-# Use the "Reset" button to reset the screen
+2) so then redo with > instead of M as the assumed stop characater
 
 page = '''<div id="top_bin"> <div id="top_content" class="width960">
 
    <div class="udacity float-left"> yes <a href="www.yahoo.com">test'''
 
- 
-
 #find and print the start character where the <a href string starts
 
 print page.find ('<a href=')
-
- 
 
 #then store that position in a variable
 
 hreftext_startposition = page.find ('<a href=')
 
- 
-
 # now add 9 to that to get the start of the link
 
 start_link = hreftext_startposition+9
 
- 
 
-# the final letter in the string "www....com" is the letter m
-
- 
+# the final character in the string "www....com" is the > that end the HREF statement
 
 end_string = ">"
 
- 
-
-# so search for m starting at the start of the link
+# so search for ">" starting at the start of the link
 
 end_link = page.find(end_string,start_link)
 
 print end_link
 
- 
-
 print page[start_link:end_link+1]
+#note the printout from teh above
 
- 
-
-then with
-
->-1 to avoid “ at end
-
-# Use this to try out anything you like. Use print to display your answer
-
-# when you press the "Test Run" button.
-
-# Use the "Reset" button to reset the screen
+#3)  then with >-1 to avoid “ at end
 
 page = '''<div id="top_bin"> <div id="top_content" class="width960">
 
    <div class="udacity float-left"> yes <a href="www.yahoo.com">test'''
 
- 
-
 #find and print the start character where the <a href string starts
 
- 
-
 print page.find ('<a href=')
-
- 
-
 #then store that position in a variable
 
 hreftext_startposition = page.find ('<a href=')
-
- 
 
 # now add 9 to that to get the start of the link
 
 start_link = hreftext_startposition+9
 
- 
-
-# the final letter in the string "www....com" is the letter m
+# the final character in the href  string "www....com" is the letter ">"
 
  
 
