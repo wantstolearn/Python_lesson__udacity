@@ -1,0 +1,34 @@
+# Given the variables s and t defined as:
+s = 'udacity'
+t = 'bodacious'
+# write Python code that prints out udacious
+# without using any quote characters in
+# your code.
+
+# Given the variables s and t defined as:
+s = 'udacity'
+t = 'bodacious'
+# write Python code that prints out udacious
+# without using any quote characters in
+# your code.
+
+
+s = 'udacity'
+t = 'bodacious'
+
+print s[0]
+
+output1= s[0]
+print output1
+
+print t[2:]
+
+output2 = t[2:]
+print output2
+
+finaloutput = output1 + output2
+print finaloutput
+
+#also very simply
+finaloutput = s[0] + t[2:]
+print finaloutput
