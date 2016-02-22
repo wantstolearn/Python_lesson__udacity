@@ -82,28 +82,24 @@ hreftext_startposition = page.find ('<a href=')
 
 start_link = hreftext_startposition+9
 
-# the final character in the href  string "www....com" is the letter ">"
+# the final character in the <href  string "www....com" is the character  ">"
 
- 
 
 end_string = ">"
 
- 
 
-# so search for m starting at the start of the link
+# so search for ">"starting from the start of the link
 
 end_link = page.find(end_string,start_link)
-
- 
 
 print end_link
 
  
+# now subtract one to get to the m
 
 actual_end_link=end_link-1
 
- 
 
 print page[start_link:actual_end_link]
 
- 
+# does this work if there are multiple links? 
