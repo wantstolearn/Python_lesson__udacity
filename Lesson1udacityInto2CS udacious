@@ -32,3 +32,10 @@ print finaloutput
 #also very simply
 finaloutput = s[0] + t[2:]
 print finaloutput
+
+#also very simply
+finaloutput = s[:5] + t[6:]
+
+# also everything but the last two and the last three
+
+finaloutput = s[:-2] + t[-3:]
