@@ -1,0 +1,14 @@
+word = "asd sda"
+
+test = word.find(word) 
+#note the dfifference between using word and "word" the second one is a string, the first is the value.
+
+print test
+print word
+
+test1 = word[::-1].find (word) 
+#search from end
+
+is_palindrome = test+test1 
+print is_palindrome
+#-1 if not a palindrome
