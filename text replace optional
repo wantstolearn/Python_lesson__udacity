@@ -1,0 +1,20 @@
+# Use this to try out anything you like. Use print to display your answer
+# when you press the "Test Run" button.
+# Use the "Reset" button to reset the screen 
+
+marker = "AFK"
+replacement = "away from keyboard"
+line = "I will now go to sleep and be AFK until lunch time tomorrow."
+
+h=line.find ('AFK')
+# h become the start position of the string
+
+line_front=line[:h]
+#everythign up to the start point
+
+line_end = line[h+3:]
+# AFK is three characters long so line_end is everything after AFK
+
+replaced = line_front + replacement + line_end
+
+print replaced
