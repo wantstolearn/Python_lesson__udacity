@@ -1,3 +1,4 @@
 # Python_lesson__udacity
-Python - Udacity Lesson 1 final test - 3 variations
-Include a deliberate error in variation 1
+Python - Udacity Lesson 1 
+
+These files are some of the tests from the UDACITY Python course "Introduction to Computer Science"
