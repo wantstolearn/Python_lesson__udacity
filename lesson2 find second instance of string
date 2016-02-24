@@ -14,3 +14,15 @@ def find_second (a,b):
     return (second_instance)
 print find_second(danton, 'audace')
 print find_second(twister,'she')
+
+
+alternative:
+danton = "De l'audace, encore de l'audace, toujours de l'audace"
+twister = "she sells seashells by the seashore"
+
+def find_second (a,b):
+    first_instance=a.find(b)
+    return a.find(b,first_instance+1)
+    
+print find_second(danton, 'audace')
+print find_second(twister,'she')
