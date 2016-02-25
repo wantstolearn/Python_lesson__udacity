@@ -8,3 +8,17 @@ def biggest(a,b,c):
         return c
     
 print biggest (3,3,6)
+
+
+# nicer alternative
+
+def bigger (a,b):
+    if a > b :
+        return a
+    else :
+        return b
+
+def biggest(a,b,c):
+    return bigger (bigger (a,b),c)
+
+print biggest (6,9,6)
