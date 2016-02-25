@@ -23,3 +23,36 @@ def is_friend (a):
        
 print is_friend ("eave")
 # the == evalueate to a boolean
+
+
+# Define a procedure, is_friend, that takes
+# a string as its input, and returns a
+# Boolean indicating if the input string
+# is the name of a friend. Assume
+# I am friends with everyone whose name
+# starts with either 'D' or 'N', but no one
+# else. You do not need to check for
+# lower case 'd' or 'n'
+
+
+def is_friend (a):
+    if a[0] == "D" :
+        return True
+    if a[0] == "N" :  # can put this in an else operation if additional clairy is preferred
+        return True
+    else: # this else is not needed, 
+        return False
+        
+print is_friend ("John")
+
+#alternative:
+def is_friend (a):
+    if a[0] == 'D' or a[0] =='N':
+        return True
+    else:
+       return False   
+        
+print is_friend ("john")
+
+#note if you dont do the else you will get None as the answer for a non D or N in the ouput
+
