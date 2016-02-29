@@ -1,0 +1,28 @@
+# in short: qrite a procedure to get a link. the output of that is a URL and the start position in the string 
+#for the next attempt to get a link. 
+# If no link is foudn the procedure should return NONE. 
+# then write a procedure which calls the first procedure continouosly until there are no more links.
+
+
+page = ('test href= "www.yahoo.com" test')
+
+def get_link(page):
+    start_link = page.find('href=') #beginning of a link
+    if start_link ==-1:
+        return None,0 #None is a special value, URL will be set to None = boolean false
+    start_quote = page.find('"', start_link) #lokk for the quote after a found ahref
+    end_quote = page.find('"',start_quote+1) # search for  link end 1 after the start 
+    url = page[start_quote+1:end_quote] #+1 to avoid the " ;  just assign the link text to url
+    page = page[end_quote:] #tells page to ignore all text before endquote, so ready for next search
+    return url, end_quote # so when the preocedure is called and printed both values are printed
+#print find_links(page) - could do this command to print the 2 results
+
+def find_all_links (page):
+     while True:
+        url,endpos = get_link(page) #store the two results thare Returned by the def in these 2 vars
+        page = page[endpos:]
+        if url:  # if there is a stiong and not "None" then print the URL, remember when find_link executes it returns "None" when there is no more ahrefs 
+            print url
+        else:
+            break 
+find_all_links(page) # dont do a print command in front else NONE appears due to break
