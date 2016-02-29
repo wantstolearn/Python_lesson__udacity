@@ -72,5 +72,25 @@ def median(a,b,c):
       
 print median (3,5,7)
 
+####### input a number and count it down to 1 then add blastoff#########less elegant solution
 
+def countdown(a):
+    while a > 0:
+        print a
+        a=a-1
+        if a == 0:
+            print 'Blastoff!'
+            return a #without this return you get an infinite loop
+        return countdown (a)
+countdown (5)
 
+#######################more elegant solution
+def countdown(a):
+    while a > 0:
+        print a
+        a=a-1
+    print 'Blastoff!'
+
+countdown (5)
+
+################
