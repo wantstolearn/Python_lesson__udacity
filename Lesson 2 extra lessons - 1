@@ -1,0 +1,76 @@
+
+########### these are the extra questions at the end of lesson2 Udacity Intro to CS
+
+############ add U to some string
+def udacify(s):
+    out= 'U'+s # no inverted commas 
+    return out
+
+print udacify ('turn')
+
+############## output median of 3 numbers
+
+###solution 1: not the most elegant
+
+def bigger(a,b):
+    if a > b:
+        return a
+    else:
+        return b
+
+def biggest(a,b,c):
+    return bigger(a,bigger(b,c))
+
+print biggest(3,5,2)
+
+def smaller(a,b):
+    if a < b:
+        return a
+    else:
+        return b
+
+def smallest(a,b,c):
+    return smaller(a,smaller(b,c))
+
+print smallest(3,5,2)
+
+def biggest_and_smallest(a,b,c):
+    return bigger(a,bigger(b,c)), smaller(a,smaller(b,c))
+
+print biggest_and_smallest(3,5,2)
+
+
+def median(a,b,c):
+    x= bigger(a,bigger(b,c))
+    y= smaller(a,smaller(b,c))
+    other = (a+b+c-x-y)
+    return other
+    print other
+   
+print median (3,3,3)
+
+######Soluton 2 ###logic is that the median is the biggest of the second two numbers, after eliminating the biggest of the three.
+
+def bigger(a,b):
+    if a > b:
+        return a
+    else:
+        return b
+
+def biggest(a,b,c):
+    return bigger(a,bigger(b,c))
+
+
+def median(a,b,c):
+    big = biggest (a,b,c)
+    if big == a: 
+        return bigger (b,c)
+    if big== b:
+        return bigger (a,c)
+    else:
+        return bigger (a,b)
+      
+print median (3,5,7)
+
+
+
