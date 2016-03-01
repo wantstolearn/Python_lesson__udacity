@@ -214,3 +214,27 @@ print set_range(10, 4, 7)
 
 print set_range(1.1, 7.4, 18.7)
 #>>> 17.6 # since 18.7 - 1.1 = 17.6
+#########################################################################################################3
+
+
+# Write a Python procedure fix_machine to take 2 string inputs
+# and returns the 2nd input string as the output if all of its
+# characters can be found in the 1st input string and "Give me
+# something that's not useless next time." if it's impossible.
+# Letters that are present in the 1st input string may be used
+# as many times as necessary to create the 2nd string (you
+# don't need to keep track of repeat usage).
+
+
+def fix_machine(debris,product):
+    length = len(product)
+    start = 1
+    while start < length :
+       check = debris.find (product[start])
+       if check == -1 :
+              return False
+       start = start + 1
+    return True
+           
+        
+print fix_machine('udacity', 'uytc')
