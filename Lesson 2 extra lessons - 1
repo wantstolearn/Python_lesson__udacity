@@ -1,4 +1,5 @@
 
+#######################################################################################################################
 ########### these are the extra questions at the end of lesson2 Udacity Intro to CS
 
 ############ add U to some string
@@ -7,7 +8,7 @@ def udacify(s):
     return out
 
 print udacify ('turn')
-
+#######################################################################################################################
 ############## output median of 3 numbers
 
 ###solution 1: not the most elegant
@@ -71,7 +72,7 @@ def median(a,b,c):
         return bigger (a,b)
       
 print median (3,5,7)
-
+#######################################################################################################################
 ####### input a number and count it down to 1 then add blastoff#########less elegant solution
 
 def countdown(a):
@@ -93,4 +94,20 @@ def countdown(a):
 
 countdown (5)
 
-################
+##########################################################################################################3
+####### find a search string within a string, print the last posotion of the seaerch string, or -1 if it is not found
+
+def find_last(target_string,search_string):
+    position = target_string.find(search_string)
+
+    while position != -1:
+        last_position = position
+        position = target_string.find(search_string,position+1)         
+        if position == -1:
+           return last_position
+    return position # so -1 is rertuned if the search string does not exist
+
+
+print find_last('othis tis ta stest', 't')
+
+print find_last('aaaa', 'b')  ###test for when string cannot be found
