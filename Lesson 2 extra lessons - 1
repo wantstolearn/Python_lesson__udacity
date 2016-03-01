@@ -228,7 +228,7 @@ print set_range(1.1, 7.4, 18.7)
 
 def fix_machine(debris,product):
     length = len(product)
-    start = 1
+    start = 0
     while start < length :
        check = debris.find (product[start])
        if check == -1 :
