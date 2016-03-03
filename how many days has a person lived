@@ -129,7 +129,7 @@ def howmanydays(birthmonth,birthday,birthyear, thismonth, thisday,thisyear):
                                       
         else:
                     birthyearisleap=0
- #######check if birthday is before Feb 29th  
+ #######3cehck if birthday is before Feb 29th  
        ###check jan
         if birthyearisleap==1: #take output of last
             if birthmonth ==1:  #and is jan
@@ -142,17 +142,57 @@ def howmanydays(birthmonth,birthday,birthyear, thismonth, thisday,thisyear):
                birthyearisleap=1 #counts this day 
                  
         print birthyearisleap          
+#################checkif this year is leap
+        print thisyear
+        thisyearisleap=0
+        if thisyear%4==0:
+               if thisyear%100 == 0:
+                     if thisyear%400 == 0:
+                         thisyearisleap=1
+                     else :
+                          #print "nop"
+                           thisyearisleap=0
+
+               else:
+                    #print "is a leap year as 4 ok - not divisible by 100"
+                    thisyearisleap=1
+                                      
+        else:
+                     thisyearisleap=0
+ #######check if birthday is  Feb 29th  
+       ###check if past feb29th
+        if thisyearisleap==1: #take output of last
+            if thismonth >2:  #and march or higher
+                thisisleap=1 #counts 1 for the 29th feb in this year
+            if thismonth==1:  # if jan then dont worry about feb29th
+                 thisisleap=0
+                
+        ###check feb     
             
+        if thisyearisleap==1: ###is a leap year        
+            if thismonth==2: #birthmonth is feb 
+               if thisday<29:
+                birthyearisleap=0 #counts this day 
+                 
+        print thisyearisleap          
+
+        
+        
+        
+        
         totalpartialyearmonthdays = monthdays+monthdayst+partialdays+thisday
-        totaldays=totalpartialyearmonthdays+totalfullyearsdays+birthyearisleap
+        totaldays=totalpartialyearmonthdays+totalfullyearsdays+birthyearisleap+thisyearisleap+1#+! to include birthday
        
                   
             
         return(totaldays) 
-    
-#finally are birthyear and this year leap year
+#finally is this year  leap year
 
-print howmanydays(07,16,1964,03,03,2016)
+print howmanydays(07,16,1963,03,03,2016)
+   
+    
+
+
    
     
 
