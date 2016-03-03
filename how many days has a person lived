@@ -1,0 +1,158 @@
+#method: count all the full years. Figure out how many are leap years, mutliplyt that by 366. Multiply the remeinder by 365/
+##then for the birth year and this year count the days in the full months
+## then add in the number if days in the birth month, the number of days in the current month 
+##finalyl check if the birthyear and this year are leap years and add 1 if its past FEB 29th this year, or birthday before Feb 29th
+
+
+def howmanydays(birthmonth,birthday,birthyear, thismonth, thisday,thisyear):
+#leap year code
+        leapyearcount=0
+        #print leapyearcount
+        fullyears=(thisyear)-(birthyear+1)
+        #print fullyears
+        storebirthyear=birthyear
+        birthyear=birthyear+1
+        #print birthyear
+        while birthyear < thisyear:
+           if birthyear%4==0:
+               if birthyear%100 == 0:
+                     if birthyear%400 == 0:
+                        #print "it is a leap year"
+                        leapyearcount=leapyearcount+1
+                        birthyear=birthyear+1
+                     else :
+                          #print "nop"
+                          birthyear=birthyear+1
+
+               else:
+                    #print "is a leap year as 4ok not divisible by 100"
+                    birthyear=birthyear+1
+                    leapyearcount=leapyearcount+1
+                   
+           else:
+                    #print "not divisible by 4"
+                    birthyear=birthyear+1
+                    
+        leapdays=leapyearcount*366
+        fullnotleapyears = fullyears-leapyearcount
+        fullnotleapyearsdays = fullnotleapyears*365
+        totalfullyearsdays=leapdays+fullnotleapyearsdays        
+    
+        if birthmonth == 12:
+            monthdays=0
+            partialdays=31-birthday
+        if birthmonth == 11: 
+            monthdays = 31
+            partialdays=30-birthday
+        if birthmonth ==  10: 
+            monthdays = 31+30 
+            partialdays=31-birthday
+        if birthmonth ==  9:
+             monthdays = 31+30+31
+             partialdays=30-birthday
+        if birthmonth ==  8 :
+             monthdays = 31+30+31+30
+             partialdays=31-birthday
+        if birthmonth ==  7:
+             monthdays = 31+30+31+30+31
+             partialdays=31-birthday           
+        if birthmonth ==  6:
+             monthdays = 31+30+31+30+31+31
+             partialdays=30-birthday
+        if birthmonth ==  5 :
+            monthdays = 31+30+31+30+31+31+30 
+            partialdays=31-birthday
+        if birthmonth ==  4:
+            monthdays = 31+30+31+30+31+31+30+31
+            partialdays= 30-birthday    
+        if birthmonth ==  3: 
+            monthdays = 31+30+31+30+31+31+30+31+30
+            partialdays=31-birthday
+        if birthmonth ==  2: 
+             partialdays=28-birthday
+             monthdays = 31+30+31+30+31+31+30+31+30+31
+        if birthmonth ==  1:
+             monthdays = 31+30+31+30+31+31+30+31+30+31+28
+            
+        if thismonth == 1:
+            monthdayst=0     
+            
+        if thismonth == 2: 
+            monthdayst = 31
+            
+        if thismonth ==  3: 
+            monthdayst = 31+28 
+            
+        if thismonth ==  4:
+             monthdayst = 31+28+31
+             
+        if thismonth ==  5 :
+             monthdayst = 31+28+31+30
+           
+        if thismonth ==  6:
+             monthdayst = 31+28+31+30+31
+             
+        if thismonth ==  7:
+             monthdayst = 31+28+31+30+31+30
+             
+        if thismonth ==  8 :
+            monthdayst = 31+28+31+30+31+30+31
+            
+        if thismonth ==  9:
+            monthdayst = 31+28+31+30+31+30+31+31
+            
+        if thismonth ==  10: 
+            monthdayst = 31+28+31+30+31+30+31+31+30
+            
+        if thismonth ==  11: 
+             monthdayst = 31+28+31+30+31+30+31+31+30+31
+            
+        if thismonth ==  12:
+             monthdayst = 31+28+31+30+31+30+31+31+30+31+30
+                
+         
+#####check if  birth year is leap
+        birthyear=storebirthyear
+        print birthyear
+        birthyearisleap=0
+        if birthyear%4==0:
+               if birthyear%100 == 0:
+                     if birthyear%400 == 0:
+                         birthyearisleap=1
+                     else :
+                          #print "nop"
+                           birthyearisleap=0
+
+               else:
+                    #print "is a leap year as 4 ok - not divisible by 100"
+                    birthyearisleap=1
+                                      
+        else:
+                    birthyearisleap=0
+ #######check if birthday is before Feb 29th  
+       ###check jan
+        if birthyearisleap==1: #take output of last
+            if birthmonth ==1:  #and is jan
+                birthyearisleap=1 #counts 1 for the 29th feb in birth year = a leap year
+         
+        ###check feb     
+            
+        if birthyearisleap==1: ###is a leap year        
+            if birthmonth==2: #birthmonth is feb 
+               birthyearisleap=1 #counts this day 
+                 
+        print birthyearisleap          
+            
+        totalpartialyearmonthdays = monthdays+monthdayst+partialdays+thisday
+        totaldays=totalpartialyearmonthdays+totalfullyearsdays+birthyearisleap
+       
+                  
+            
+        return(totaldays) 
+    
+#finally are birthyear and this year leap year
+
+print howmanydays(07,16,1964,03,03,2016)
+   
+    
+
