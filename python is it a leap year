@@ -1,0 +1,21 @@
+
+# its a leap year if divisibile by 4 but also check if the year is  divisbkle by 100 and if it is the year must also be divisibke by 400
+def is_it_a_leapyear (year):  
+    
+    if year%4==0:
+       if year%100 == 0:
+             if year%400 == 0:
+                print "it is a leap year"
+                leapyear=1
+             else :
+                  print "nop"
+                  leapyear=0
+       else:
+            print "is a leap year"
+            leapyear=1
+    else:
+            print "no"
+            leapyear=0
+
+is_it_a_leapyear (2016)            
+       
