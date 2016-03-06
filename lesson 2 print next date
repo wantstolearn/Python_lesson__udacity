@@ -1,0 +1,8 @@
+
+if day <30:
+    return year,month,day+1
+else:
+    if month <12:
+        return year, month+1,1
+    else #momth=12    
+        return year+1,1,1
