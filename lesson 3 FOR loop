@@ -163,8 +163,34 @@ def union (a,b):
         else:
             x=x+1
     return a            
-  
-            
+ print union (a,b) 
+###########cleaner version
+# Define a procedure, union,
+# that takes as inputs two lists.
+# It should modify the first input
+# list to be the set union of the two
+# lists. You may assume the first list
+# is a set, that is, it contains no 
+# repeated elements.
+a = [1,2,3]
+b = [2,4,6]
 
-print union (a,b) 
-
+   
+   # compare each index of b with all of a
+    #if they match add that index to a
+    #if they dont match check the nedt one
+    #if finished then return a
+def union (a,b):
+    x=0
+    while x < len(b):
+        if b[x] not in a: 
+           a.append (b[x])
+           x=x+1
+        else:
+            x=x+1
+   
+union(a,b)
+print a 
+#>>> [1,2,3,4,6]
+print b
+#>>> [2,4,6]
