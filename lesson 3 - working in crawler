@@ -1,0 +1,36 @@
+
+####
+
+page =('<html><body>this is a test page for learning to crawl!<p>It is a good idea to <a href="http://www.udacity.com/cs101x/crawling.html">learn to crawl</a>before you try to <a href="http://www.udacity.com/cs101x/walking.html">walk</a> or <a href="http://www.udacity.com/cs101x/flying.html">fly</a>.</p></body></html>') 
+def get_link(page):
+    start_link = page.find('href=') #beginning of a link
+    if start_link ==-1:
+        return None,0 #None is a special value, URL will be set to None = boolean false
+    start_quote = page.find('"', start_link) #lokk for the quote after a found ahref
+    end_quote = page.find('"',start_quote+1) # search for  link end 1 after the start 
+    url = page[start_quote+1:end_quote] #+1 to avoid the " ;  just assign the link text to url
+    page = page[end_quote:] #tells page to ignore all text before endquote, so ready for next search
+    return url, end_quote # so when the preocedure is called and printed both values are printed
+#print find_links(page) - could do this command to print the 2 results
+
+def find_all_links (page):
+     links=[]
+     while True:
+        url,endpos = get_link(page) #store the two results thare Returned by the def in these 2 vars
+        page = page[endpos:]
+        if url:  # if there is a sting and not "None" then print the URL, remember when find_link executes it returns "None" when there is no more ahrefs 
+          links.append(url)
+        else:
+            break 
+     return links  
+print find_all_links(page)   
+
+def crawl_web (seed):
+    tocrawl=[seed]
+    crawled=[]
+    while tocrawl: # this means while the var tocrawl ie the list tocrweal is not emptyits true, else false equivalent to if to crawl=-1
+        page = tocrawl.pop() # take the next item in the list, and remove it from the list
+        if page not in crawled:
+            union (crawled, find_all_links (get_link(page)))#####Union???????
+            crawled.append(page)
+    return crawled
