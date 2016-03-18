@@ -23,3 +23,28 @@ print product_list([1,2,3,4])
 
 print product_list([])
 #>>> 1
+#######################################################################################################################
+# Define a procedure, greatest,
+# that takes as input a list
+# of positive numbers, and
+# returns the greatest number
+# in that list. If the input
+# list is empty, the output
+# should be 0.
+
+def greatest(p):
+    greatest=0
+    x=0
+    for i in p:
+            if p[x]>greatest:
+               greatest=p[x]
+               x=x+1 
+            else:
+                x=x+1
+    return greatest
+
+
+print greatest([4,23,1,656,45])
+#>>> 656
+print greatest([])
+#>>> 0
