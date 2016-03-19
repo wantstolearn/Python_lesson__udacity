@@ -48,3 +48,55 @@ print greatest([4,23,1,656,45])
 #>>> 656
 print greatest([])
 #>>> 0
+############more elegant version which leverages the way the i in p function actually works
+def greatest(p):
+    greatest=0
+    
+    for i in p:
+            if i>greatest:
+               greatest=i
+    return greatest
+
+print greatest([4,23,1,656,45])
+print greatest([])
+
+#####################################################################
+# Define a procedure, total_enrollment,
+# that takes as an input a list of elements,
+# where each element is a list containing
+# three elements: a university name,
+# the total number of students enrolled,
+# and the annual tuition fees.
+
+# The procedure should return two numbers,
+# not a string, 
+# giving the total number of students
+# enrolled at all of the universities
+# in the list, and the total tuition fees
+# (which is the sum of the number
+# of students enrolled times the
+# tuition fees for each university).
+
+udacious_univs = [['Udacity',90000,0]]
+
+usa_univs = [ ['California Institute of Technology',2175,37704],
+              ['Harvard',19627,39849],
+              ['Massachusetts Institute of Technology',10566,40732],
+              ['Princeton',7802,37000],
+              ['Rice',5879,35551],
+              ['Stanford',19535,40569],
+              ['Yale',11701,40500]  ]
+
+def calc(usa_univs):
+       x=-1
+       total_enrollment=0
+       while x < len(usa_univs)-1:
+           x=x+1
+           total_enrollment= total_enrollment+usa_univs[x][1]
+           
+       return total_enrollment
+            
+print calc(usa_univs)
+
+above just shows the total students
+########################expanding the above code ########################
