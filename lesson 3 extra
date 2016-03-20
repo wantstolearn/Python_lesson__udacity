@@ -100,3 +100,17 @@ print calc(usa_univs)
 
 above just shows the total students
 ########################expanding the above code ########################
+########## add one line to get the toal fees#######
+
+
+def calc(usa_univs):
+       x=-1
+       total_enrollment=0
+       total_fees=0
+       while x < len(usa_univs)-1:
+           x=x+1
+           total_enrollment= total_enrollment+usa_univs[x][1]
+           total_fees=total_fees + usa_univs[x][1]*usa_univs[x][2]
+       return total_enrollment,total_fees
+            
+print calc(usa_univs)
