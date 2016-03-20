@@ -1,0 +1,25 @@
+
+
+############first check a single line for duplicates##############333333
+
+list1 =[1,2,3,4,5,6,7,8]
+
+def check_sudoku(p):
+    #ist is length n. compare 1st index with the rest, then second with the rest then third etc
+    #contain 1 to n?
+    n=len(p)
+    x=-1
+    y=0
+    while x <n:
+       x=x+1             # start at p[0] and p[1]
+       y=x+1 
+       while y<n:         # x is fixed then cycle throught the Y's
+               if p[x] != p[y]:
+                   y=y+1 
+               else: 
+                    return False
+       #dont return anythign to this WHILE let the IF make the decision, if True, the program auto goes abck to the first while        
+    return True
+    
+print check_sudoku(correct)       
+##############################################################################
