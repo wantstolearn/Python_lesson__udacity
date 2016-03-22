@@ -22,4 +22,46 @@ def check_sudoku(p):
     return True
     
 print check_sudoku(correct)       
-##############################################################################
+############################################################################################################################
+########### check one list with eg 3 sublists, so must track list length and sublist length#################################
+
+list2 = [ [1,2,3,4,5,6,7,8] , [1,2,3,4,5,6,7,8],[1,2,3,4,5,6,7,8]]
+
+
+print len(list2[0])     #just a reminder of structure of list/sublist
+# think of sudoku block as one long list, each row = a position in the list, each colum is the nth position in the row  list
+
+# the first code checked if everythign in a list was different, 
+#this second code it to do that for two sub lists ie check every digit in sublist 1 is differet, 
+# check every digit in sublist 2 is different.
+
+
+def check_sudoku(p):
+    #ist is length n. compare 1st index with the rest, then second with the rest then third etc
+    #contain 1 to n?
+    z=0
+    n=len(p[z])  #(z= sublist number, sudouk so we assume allways the same Lenght (and height) ie square not 8 in one subist and 3 in the other) 
+    k=len(p)     #length of entire list, so eg length = 2 sublists but 8 in each sublist, 
+    while z < k:
+         
+          print p[z]  #just to see what is happening
+          print n     #just to see what is happening
+          x=-1
+          y=0
+          while x <n:
+               x=x+1             # start at p[0][0] and p[1][1]
+               y=x+1 
+               while y<n:         # # cycle through first sub list
+                       if p[z][x] != p[z][y]:
+                           y=y+1 
+                       else: 
+                            return False
+
+               #dont return anythign to this WHILE let the IF make the decision, if True, the program auto goes abck to the first while        
+          z=z+1
+                                     
+    return True
+
+print check_sudoku(list2)       
+################################################################################################################################################
+############## 
