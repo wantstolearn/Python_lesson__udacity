@@ -31,9 +31,9 @@ list2 = [ [1,2,3,4,5,6,7,8] , [1,2,3,4,5,6,7,8],[1,2,3,4,5,6,7,8]]
 print len(list2[0])     #just a reminder of structure of list/sublist
 # think of sudoku block as one long list, each row = a position in the list, each colum is the nth position in the row  list
 
-# the first code checked if everythign in a list was different, 
-#this second code it to do that for two sub lists ie check every digit in sublist 1 is differet, 
-# check every digit in sublist 2 is different.
+# the first code checked if everything in a list was different, 
+#this second code it to do that for e.g. 3 sub lists ie check every digit in sublist 1 is differet, 
+# check every digit in sublist 2 is different etc.
 
 
 def check_sudoku(p):
