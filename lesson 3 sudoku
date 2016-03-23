@@ -64,4 +64,62 @@ def check_sudoku(p):
 
 print check_sudoku(list2)       
 ################################################################################################################################################
-############## 
+############## add in column check 
+
+list3 = [ [1,2,3] , 
+         [2,3,1],
+         [3,1,2]]
+
+##3rd iteration, check if p00 = p10=p20 =pn0 then p01=p11=p21-pn1 eetc. up to N times 
+
+def check_sudoku(p):
+    #ist is length n. compare 1st index with the rest, then second with the rest then third etc
+    #contain 1 to n?
+    z=0
+    n=len(p[z])  # z= sublist number, sudoku so we assume allways the same Lenght (and height) ie square not 8 in one subist and 3 in the other) 
+    k=len(p)     #length of entire list, so eg length = 2 sublists but 8 in each sublist, 
+    while z < k:
+         
+          print p[z]  #just to see what is happening
+          print n     #just to see what is happening
+          x=-1
+          y=0
+          while x <n:
+               x=x+1             # start at p[0][0] and p[1][1]
+               y=x+1 
+               while y<n:         # # cycle through first sub list
+                       if p[z][x] != p[z][y]:
+                           y=y+1 
+                       else: 
+                            return False
+
+               #dont return anythign to this WHILE let the IF make the decision, if True, the program auto goes abck to the first while        
+          z=z+1
+
+                        
+    output = True
+    if True: 
+        print "So far so good" #this is just to prove I am moving to this part of the code to start the columns check
+    #return output    no return here
+    else:
+        print"oops"
+# start part 3 column check
+    x=0
+    while x< n: 
+                z=0
+                n= len(p)
+                while z < n-1: #eg p00 - p10-p20 in a 3 length list ie n-3, n-1=2
+                        print z    
+                        if p[z][x] != p[z+1][x]:  #have to assume input is accurate ie 1-9 only
+                            z=z+1
+                            print z
+                        else:
+                            return False
+                            #incrment x next 
+                x=x+1             
+    return True
+
+
+print check_sudoku(list3)  
+
+
