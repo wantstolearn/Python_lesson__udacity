@@ -252,5 +252,5 @@ def check_sudoku(p):
                             return False
                 x=x+1             
     return True
-###.is_integer()
+
 print check_sudoku(list4)
