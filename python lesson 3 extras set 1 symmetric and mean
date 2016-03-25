@@ -101,3 +101,41 @@ print list_mean([])
 # incorrect.
 print list_mean([2])
 #>>> 2.0
+
+##########################################################   frequency of letter#########
+def freq_analysis(message):
+    
+    n= len(message)
+    alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    freq_list=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    #######first part of code add 1 each time there is a positive hit on a letter
+    x=y=0
+    while y < 26: 
+        
+        while x < n:
+            if message [x] == alphabet[y]:
+               freq_list[y]= freq_list[y]+1 # so if a letter in message matches a letter in the alphabet, add on to that position in the alphabet. so two "a" mean 2 in the freq list at the position for letter a
+            x=x+1  ###check every letter in message against "a", 
+        y=y+1 ### check the next letter in message against the next letter in the alphabet
+        x=0 ## need to rest back to the first letter in message before looping against the next Y
+    
+    y=0
+    
+    for e in freq_list: 
+         freq_list[y]=freq_list[y]/float(n)# so eg a=4, n=4 actual frequenct = 4/6 
+         y=y+1   
+    return freq_list
+
+
+#Tests
+
+print freq_analysis("aaccdefg")
+##########################################################################################################################
+
+
+
+                
+
+        
+        
