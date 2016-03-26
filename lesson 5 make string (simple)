@@ -1,0 +1,9 @@
+def make_string(p):
+    s= ""
+    for e in p:
+        s = s+e
+    return s
+
+print make_string ("w" "o" "r" "d")
+
+
