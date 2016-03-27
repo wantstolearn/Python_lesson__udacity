@@ -33,3 +33,24 @@ print hash_string('au',12)
 
 print hash_string('udacity',12)
 #>>> 11
+########################################## cleaner code version ###########################
+
+def hash_string(keyword,buckets):
+    
+    n= len(keyword)
+
+    x=0
+    z=0
+    while x < n:
+        storeit = keyword[x]
+        z = (z + ord(storeit))%buckets
+        x=x+1
+    return z
+    
+    ############################## and best version ###############
+    def hash_string(keyword, buckets):
+
+    h = 0
+    for c in keyword:
+        h= (h+ord(c))%buckets
+    return h
