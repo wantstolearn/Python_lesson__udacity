@@ -17,6 +17,10 @@ def fibonacci(n):
 
     fibx=0
     fiby=1
+    if n==0: 
+        fib=0
+    if n==1: 
+        fib=1
     x=0
     while x < n-1:
         
