@@ -35,3 +35,15 @@ def fibonacci(n):
         
         
 print fibonacci(16)
+############ and the elegant way #################
+
+def fibonacci(n):
+
+    current=0
+    after=1
+    
+    for i in range (0,n):
+        current,after=after, current+after; # multiple assignment avoids the need for a placeholder var
+    return current       
+        
+print fibonacci(5)
