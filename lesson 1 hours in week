@@ -1,0 +1,7 @@
+def hours(n):
+    hours_day =24
+    days_week = 7
+    hours_week = hours_day*days_week*n
+    return hours_week
+    
+print hours(7)
